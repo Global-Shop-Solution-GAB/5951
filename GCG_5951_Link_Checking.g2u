@@ -1,0 +1,869 @@
+Program.Sub.ScreenSU.Start
+Gui.F_Link_Chk..Create
+Gui.F_Link_Chk..Size(10410,5925)
+Gui.F_Link_Chk..MinX(0)
+Gui.F_Link_Chk..MinY(0)
+Gui.F_Link_Chk..Position(0,0)
+Gui.F_Link_Chk..BackColor(-2147483633)
+Gui.F_Link_Chk..MousePointer(0)
+Gui.F_Link_Chk..Event(UnLoad,F_Link_Chk_UnLoad)
+Gui.F_Link_Chk..MaxButton(False)
+Gui.F_Link_Chk..Sizeable(False)
+Gui.F_Link_Chk..Caption("Link Verification Functionality")
+Gui.F_Link_Chk.txtDelimiter.Create(TextBox,"",True,1215,300,0,90,285,True,0,"Arial",8,-2147483643,1)
+Gui.F_Link_Chk.txtDelimiter.MaxLength(3)
+Gui.F_Link_Chk.txtDelimiter.Event(LostFocus,txtDelimiter_LostFocus)
+Gui.F_Link_Chk.txtDelimiter.TabStop(True)
+Gui.F_Link_Chk.lblDelimiter.Create(Label,"Key Delimiter",True,1095,255,0,75,75,True,0,"Arial",8,-2147483633,0)
+Gui.F_Link_Chk.txtEmail.Create(TextBox,"",True,8670,300,0,1500,285,True,0,"Arial",8,-2147483643,1)
+Gui.F_Link_Chk.txtEmail.TabStop(True)
+Gui.F_Link_Chk.txtEmail.Event(LostFocus,txtEmail_LostFocus)
+Gui.F_Link_Chk.lblEmail.Create(Label,"Master Failed Email Recipients (Semi-colon [;] between multiple recipients)",True,5955,255,0,1485,75,True,0,"Arial",8,-2147483633,0)
+Gui.F_Link_Chk.frameLinkTypes.Create(Frame)
+Gui.F_Link_Chk.frameLinkTypes.Size(3450,4485)
+Gui.F_Link_Chk.frameLinkTypes.Position(15,630)
+Gui.F_Link_Chk.txtTypeID.Create(TextBox,"",True,840,300,0,150,390,True,1,"Arial",8,-2147483643,1)
+Gui.F_Link_Chk.txtTypeID.NumericOnly(2)
+Gui.F_Link_Chk.txtTypeID.Mask("00000")
+Gui.F_Link_Chk.txtTypeID.Parent("frameLinkTypes")
+Gui.F_Link_Chk.txtTypeID.TabStop(True)
+Gui.F_Link_Chk.cmdTypeBRW.Create(Button)
+Gui.F_Link_Chk.cmdTypeBRW.Size(330,330)
+Gui.F_Link_Chk.cmdTypeBRW.Position(1065,375)
+Gui.F_Link_Chk.cmdTypeBRW.Caption("^")
+Gui.F_Link_Chk.cmdTypeBRW.Event(Click,cmdTypeBRW_Click)
+Gui.F_Link_Chk.cmdTypeBRW.Parent("frameLinkTypes")
+Gui.F_Link_Chk.cmdTypeBRW.TabStop(True)
+Gui.F_Link_Chk.cmdAddType.Create(Button)
+Gui.F_Link_Chk.cmdAddType.Size(855,330)
+Gui.F_Link_Chk.cmdAddType.Position(1545,375)
+Gui.F_Link_Chk.cmdAddType.Caption("Add")
+Gui.F_Link_Chk.cmdAddType.Event(Click,cmdAddType_Click)
+Gui.F_Link_Chk.cmdAddType.Parent("frameLinkTypes")
+Gui.F_Link_Chk.cmdAddType.TabStop(True)
+Gui.F_Link_Chk.lstTypes.Create(ListBox)
+Gui.F_Link_Chk.lstTypes.Size(3315,2790)
+Gui.F_Link_Chk.lstTypes.Position(75,1035)
+Gui.F_Link_Chk.lstTypes.Parent("frameLinkTypes")
+Gui.F_Link_Chk.lstTypes.Event(Click,lstTypes_Click)
+Gui.F_Link_Chk.lblTypeID.Create(Label,"Link ID",True,630,255,0,135,180,True,0,"Arial",8,-2147483633,0)
+Gui.F_Link_Chk.lblTypeID.Parent("frameLinkTypes")
+Gui.F_Link_Chk.lblTypes.Create(Label,"Link Type Checks",True,1380,255,0,135,825,True,0,"Arial",8,-2147483633,0)
+Gui.F_Link_Chk.lblTypes.Parent("frameLinkTypes")
+Gui.F_Link_Chk.cmdDeleteType.Create(Button)
+Gui.F_Link_Chk.cmdDeleteType.Size(855,330)
+Gui.F_Link_Chk.cmdDeleteType.Position(150,4020)
+Gui.F_Link_Chk.cmdDeleteType.Parent("frameLinkTypes")
+Gui.F_Link_Chk.cmdDeleteType.Caption("Delete")
+Gui.F_Link_Chk.cmdDeleteType.Event(Click,cmdDeleteType_Click)
+Gui.F_Link_Chk.cmdDeleteType.TabStop(True)
+Gui.F_Link_Chk.frameTables.Create(Frame)
+Gui.F_Link_Chk.frameTables.Size(5235,4485)
+Gui.F_Link_Chk.frameTables.Position(3585,630)
+Gui.F_Link_Chk.frameTables.Enabled(False)
+Gui.F_Link_Chk.txtTable.Create(TextBox,"",True,2940,300,0,150,390,True,0,"Arial",8,-2147483643,1)
+Gui.F_Link_Chk.txtTable.Parent("frameTables")
+Gui.F_Link_Chk.txtTable.Event(LostFocus,txtTable_LostFocus)
+Gui.F_Link_Chk.txtTable.TabStop(True)
+Gui.F_Link_Chk.lblTable.Create(Label,"Table Name",True,1020,255,0,135,180,True,0,"Arial",8,-2147483633,0)
+Gui.F_Link_Chk.lblTable.Parent("frameTables")
+Gui.F_Link_Chk.cmdTableBRW.Create(Button)
+Gui.F_Link_Chk.cmdTableBRW.Size(330,330)
+Gui.F_Link_Chk.cmdTableBRW.Position(3165,375)
+Gui.F_Link_Chk.cmdTableBRW.Parent("frameTables")
+Gui.F_Link_Chk.cmdTableBRW.Caption("^")
+Gui.F_Link_Chk.cmdTableBRW.Event(Click,cmdTableBRW_Click)
+Gui.F_Link_Chk.cmdTableBRW.TabStop(True)
+Gui.F_Link_Chk.frameFields.Create(Frame)
+Gui.F_Link_Chk.frameFields.Enabled(False)
+Gui.F_Link_Chk.frameFields.Size(5100,3660)
+Gui.F_Link_Chk.frameFields.Position(75,720)
+Gui.F_Link_Chk.frameFields.Parent("frameTables")
+Gui.F_Link_Chk.txtField.Create(TextBox,"",True,3375,300,0,150,390,True,0,"Arial",8,-2147483643,1)
+Gui.F_Link_Chk.txtField.Parent("frameFields")
+Gui.F_Link_Chk.txtField.Event(LostFocus,txtField_LostFocus)
+Gui.F_Link_Chk.txtField.TabStop(True)
+Gui.F_Link_Chk.lblField.Create(Label,"Field Name",True,960,255,0,135,180,True,0,"Arial",8,-2147483633,0)
+Gui.F_Link_Chk.lblField.Parent("frameFields")
+Gui.F_Link_Chk.cmdFieldBRW.Create(Button)
+Gui.F_Link_Chk.cmdFieldBRW.Size(330,330)
+Gui.F_Link_Chk.cmdFieldBRW.Position(3600,375)
+Gui.F_Link_Chk.cmdFieldBRW.Parent("frameFields")
+Gui.F_Link_Chk.cmdFieldBRW.Caption("^")
+Gui.F_Link_Chk.cmdFieldBRW.Event(Click,cmdFieldBRW_Click)
+Gui.F_Link_Chk.cmdFieldBRW.TabStop(True)
+Gui.F_Link_Chk.cmdAddField.Create(Button)
+Gui.F_Link_Chk.cmdAddField.Size(855,330)
+Gui.F_Link_Chk.cmdAddField.Position(4095,375)
+Gui.F_Link_Chk.cmdAddField.Parent("frameFields")
+Gui.F_Link_Chk.cmdAddField.Caption("Add")
+Gui.F_Link_Chk.cmdAddField.Event(Click,cmdAddField_Click)
+Gui.F_Link_Chk.cmdAddField.TabStop(True)
+Gui.F_Link_Chk.lstFields.Create(ListBox)
+Gui.F_Link_Chk.lstFields.Size(4950,1950)
+Gui.F_Link_Chk.lstFields.Position(75,1035)
+Gui.F_Link_Chk.lstFields.Parent("frameFields")
+Gui.F_Link_Chk.lstFields.Event(Click,lstFields_Click)
+Gui.F_Link_Chk.cmdDeleteField.Create(Button)
+Gui.F_Link_Chk.cmdDeleteField.Size(855,330)
+Gui.F_Link_Chk.cmdDeleteField.Position(150,3180)
+Gui.F_Link_Chk.cmdDeleteField.Parent("frameFields")
+Gui.F_Link_Chk.cmdDeleteField.Caption("Delete")
+Gui.F_Link_Chk.cmdDeleteField.Event(Click,cmdDeleteField_Click)
+Gui.F_Link_Chk.cmdDeleteField.TabStop(True)
+Gui.F_Link_Chk.lblFields.Create(Label,"Table.Field",True,915,255,0,135,825,True,0,"Arial",8,-2147483633,0)
+Gui.F_Link_Chk.lblFields.Parent("frameFields")
+Gui.F_Link_Chk.txtTypeEmail.Create(TextBox,"",True,3855,300,0,1155,3195,True,0,"Arial",8,-2147483643,1)
+Gui.F_Link_Chk.txtTypeEmail.Parent("frameFields")
+Gui.F_Link_Chk.txtTypeEmail.Event(LostFocus,txtTypeEmail_LostFocus)
+Gui.F_Link_Chk.lblTypeEmail.Create(Label,"Failed Recipients ([;] between multiple recipients)",True,3660,255,0,1140,2985,True,0,"Arial",8,-2147483633,0)
+Gui.F_Link_Chk.lblTypeEmail.Parent("frameFields")
+Gui.F_Link_Chk.frameFieldSettings.Create(Frame)
+Gui.F_Link_Chk.frameFieldSettings.Enabled(False)
+Gui.F_Link_Chk.frameFieldSettings.Size(1305,4485)
+Gui.F_Link_Chk.frameFieldSettings.Position(8940,630)
+Gui.F_Link_Chk.txtCharLength.Create(TextBox,"",True,1020,300,0,150,390,True,0,"Arial",8,-2147483643,1)
+Gui.F_Link_Chk.txtCharLength.Parent("frameFieldSettings")
+Gui.F_Link_Chk.txtCharLength.NumericOnly(2)
+Gui.F_Link_Chk.txtCharLength.Event(LostFocus,txtCharLength_LostFocus)
+Gui.F_Link_Chk.txtCharLength.TabStop(True)
+Gui.F_Link_Chk.lblCharLength.Create(Label,"Field Length",True,990,255,0,135,180,True,0,"Arial",8,-2147483633,0)
+Gui.F_Link_Chk.lblCharLength.Parent("frameFieldSettings")
+Gui.F_Link_Chk.chkLPadZero.Create(CheckBox)
+Gui.F_Link_Chk.chkLPadZero.Size(1080,540)
+Gui.F_Link_Chk.chkLPadZero.Position(120,795)
+Gui.F_Link_Chk.chkLPadZero.Parent("frameFieldSettings")
+Gui.F_Link_Chk.chkLPadZero.Caption("Left Pad Zeros")
+Gui.F_Link_Chk.chkLPadZero.Event(Click,chkLPadZero_Click)
+Gui.F_Link_Chk.chkLPadZero.TabStop(True)
+Gui.F_Link_Chk.cmdSave.Create(Button)
+Gui.F_Link_Chk.cmdSave.Size(855,330)
+Gui.F_Link_Chk.cmdSave.Position(135,5190)
+Gui.F_Link_Chk.cmdSave.Caption("Save")
+Gui.F_Link_Chk.cmdSave.Event(Click,cmdSave_Click)
+Gui.F_Link_Chk.cmdSave.TabStop(True)
+Gui.F_Link_Chk.cmdDoc.Create(Button)
+Gui.F_Link_Chk.cmdDoc.Size(855,330)
+Gui.F_Link_Chk.cmdDoc.Position(1170,5190)
+Gui.F_Link_Chk.cmdDoc.TabStop(True)
+Gui.F_Link_Chk.cmdDoc.Caption("Intruc.")
+Gui.F_Link_Chk.cmdDoc.Event(Click,cmdDoc_Click)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+Program.External.Include.Library("GCG_5951_Try_Catch.lib")
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+'Author: BixRB
+'Date: 7 Apr 2020
+'GCG_5951_Link_Checking.g2u
+'Haskris
+'Maintenance screen to use optional key checks and delimiters in filenames
+F.Intrinsic.Control.Try
+
+Gui.F_Link_Chk.lstTypes.TabStop(False)
+Gui.F_Link_Chk.lstFields.TabStop(False)
+
+F.ODBC.Connection!con.OpenCompanyConnection
+F.Data.DataTable.CreateFromSQL("dtLinkTypes","con","select LINK_TYPE, LINK_TYPE_STR, rtrim(DESCRIPTION) as DESCRIPTION from GCG_5951_LINK_TYPES order by LINK_TYPE asc;",True)
+F.Data.DataTable.CreateFromSQL("dtLinkChk","con","select LINK_TYPE, rtrim(DESCRIPTION) as DESCRIPTION, FIELD_NAMES, DATABASE_LOCS, WIDTHS, LPAD_ZERO, TABLE_NAME, rtrim(DELIMITER) as DELIMITER, EMAIL, TYPE_EMAIL from GCG_5951_LINK_CHK order by LINK_TYPE asc;",True)
+F.Data.DataTable.CreateFromSQL("dtTables","con","select Xf$Id as TABLE_ID, rtrim(Xf$Name) as TABLE_NAME from X$File where TABLE_NAME not like 'X$%' order by TABLE_NAME asc;",True)
+F.Data.DataTable.CreateFromSQL("dtFields","con","select Xe$Id as FIELD_ID, Xe$File as TABLE_ID, rtrim(Xe$Name) as FIELD_NAME from X$Field where Xe$DataType < 200 order by FIELD_ID;",True)
+F.ODBC.Connection!con.Close
+F.Data.DataView.Create("dtLinkTypes","dvTypeCheck")
+F.Data.DataView.Create("dtLinkChk","dvTypeCheck")
+F.Data.DataView.Create("dtTables","dvString")
+F.Data.DataView.Create("dtFields","dvTable")
+
+Gui.F_Link_Chk.lstTypes.AddItems("DataTable","dtLinkChk","DESCRIPTION","DESCRIPTION")
+F.Intrinsic.Control.If(V.DataTable.dtLinkChk.RowCount,>,0)
+	Gui.F_Link_Chk.txtDelimiter.Text(V.DataTable.dtLinkChk(0).DELIMITER!FieldVal)
+	Gui.F_Link_Chk.txtEmail.Text(V.DataTable.dtLinkChk(0).EMAIL!FieldVal)
+F.Intrinsic.Control.EndIf
+
+Gui.F_Link_Chk..Show
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage,"ScriptFile",V.Caller.ScriptFile,"CurrentSubroutine",V.Ambient.CurrentSubroutine)
+	F.Intrinsic.Control.CallSub(F_Link_Chk_UnLoad)
+F.Intrinsic.Control.EndTry
+Program.Sub.Main.End
+
+Program.Sub.F_Link_Chk_UnLoad.Start
+F.Intrinsic.Control.End
+Program.Sub.F_Link_Chk_UnLoad.End
+
+Program.Sub.cmdTypeBRW_Click.Start
+V.Local.sDataTableString.Declare
+V.Local.sColumnTitles.Declare
+V.Local.sColumnWidths.Declare
+V.Local.sRet.Declare
+F.Intrinsic.Control.Try
+
+F.Data.DataView.ToString("dtLinkTypes","dvTypeCheck","LINK_TYPE_STR*!*DESCRIPTION","*!*","#$#",V.Local.sDataTableString)
+V.Local.sColumnTitles.Set("Link ID*!*Description")
+V.Local.sColumnWidths.Set("35*!*50")
+F.Intrinsic.String.Split(V.Local.sColumnTitles,"*!*",V.Local.sColumnTitles)
+F.Intrinsic.String.Split(V.Local.sColumnWidths,"*!*",V.Local.sColumnWidths)
+F.Intrinsic.UI.BrowserFromString("Link Types",V.Local.sDataTableString,"*!*","#$#",V.Local.sColumnTitles,V.Local.sColumnWidths,V.Local.sRet)
+
+F.Intrinsic.Control.If(V.Local.sRet.IsNotCancel)
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	'0 - Link Type ID String Variant
+	'1 - Description
+	
+	Gui.F_Link_Chk.txtTypeID.Text(V.Local.sRet(0))
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage,"ScriptFile",V.Caller.ScriptFile,"CurrentSubroutine",V.Ambient.CurrentSubroutine)
+	F.Intrinsic.Control.CallSub(F_Link_Chk_UnLoad)
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdTypeBRW_Click.End
+
+Program.Sub.cmdAddType_Click.Start
+V.Local.sFilter.Declare
+F.Intrinsic.Control.Try
+
+F.Intrinsic.Control.If(V.Screen.F_Link_Chk!txtDelimiter.Text,=,"",or,V.Screen.F_Link_Chk!txtDelimiter.Text.Length,<,3)
+	F.Intrinsic.UI.Msgbox("Key Delimiter must be 3 characters and cannot contain any unusable characters in Windows Filenames.")
+	Gui.F_Link_Chk.txtDelimiter.SetFocus
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.If(V.Screen.F_Link_Chk!txtTypeID.Text.Long,=,0)
+	F.Intrinsic.UI.Msgbox("Link ID 00000 cannot be used on this maintenance program.")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+F.Intrinsic.String.Build("[LINK_TYPE] = {0}",V.Screen.F_Link_Chk!txtTypeID.Text.Long,V.Local.sFilter)
+F.Data.DataView.SetFilter("dtLinkTypes","dvTypeCheck",V.Local.sFilter)
+F.Intrinsic.Control.If(V.DataView.dtLinkTypes!dvTypeCheck.RowCount,=,0)
+	F.Intrinsic.UI.Msgbox("Not a valid link ID.")
+	F.Data.DataView.SetFilter("dtLinkTypes","dvTypeCheck","")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+F.Data.DataView.SetFilter("dtLinkChk","dvTypeCheck",V.Local.sFilter)
+F.Intrinsic.Control.If(V.DataView.dtLinkChk!dvTypeCheck.RowCount,>,0)
+	F.Intrinsic.String.Build("Link ID {0} is already in use.",V.DataView.dtLinkTypes!dvTypeCheck(0).LINK_TYPE_STR!FieldVal,V.Local.sFilter)
+	F.Intrinsic.UI.Msgbox(V.Local.sFilter)
+	F.Data.DataView.SetFilter("dtLinkTypes","dvTypeCheck","")
+	F.Data.DataView.SetFilter("dtLinkChk","dvTypeCheck","")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+'Add Link type to link check datatable
+F.Intrinsic.String.Build("{0} ({1})",V.DataView.dtLinkTypes!dvTypeCheck(0).DESCRIPTION!FieldVal,V.DataView.dtLinkTypes!dvTypeCheck(0).LINK_TYPE_STR!FieldVal,V.Local.sFilter)
+F.Data.DataTable.AddRow("dtLinkChk","LINK_TYPE",V.DataView.dtLinkTypes!dvTypeCheck(0).LINK_TYPE!FieldVal,"DESCRIPTION",V.Local.sFilter,"DATABASE_LOCS","","TABLE_NAME","","FIELD_NAMES","","WIDTHS","","LPAD_ZERO","","DELIMITER",V.Screen.F_Link_Chk!txtDelimiter.Text,"EMAIL",V.Screen.F_Link_Chk!txtEmail.Text.Trim,"TYPE_EMAIL","")
+Gui.F_Link_Chk.lstTypes.AddItem(V.Local.sFilter)
+F.Data.DataView.SetFilter("dtLinkTypes","dvTypeCheck","")
+F.Data.DataView.SetFilter("dtLinkChk","dvTypeCheck","")
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage,"ScriptFile",V.Caller.ScriptFile,"CurrentSubroutine",V.Ambient.CurrentSubroutine)
+	F.Intrinsic.Control.CallSub(F_Link_Chk_UnLoad)
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdAddType_Click.End
+
+Program.Sub.txtDelimiter_LostFocus.Start
+V.Local.sContains.Declare
+V.Local.sDelimiter.Declare
+F.Intrinsic.Control.Try
+
+F.Intrinsic.String.RegExMatch(V.Screen.F_Link_Chk!txtDelimiter.Text.Trim,"[<>:""\/\\\|?*.~]",True,V.Local.sContains)
+
+F.Intrinsic.Control.If(V.Local.sContains,!=,"")
+	'RegEx Match picked up an exception, show first exception and reset change to text box
+	F.Intrinsic.String.Split(V.Local.sContains,"@!@",V.Local.sContains)
+	V.Local.sContains.RedimPreserve(0,0)
+	F.Intrinsic.String.Split(V.Local.sContains,"*!*",V.Local.sContains)
+	F.Intrinsic.String.Build("{0} is reserved by Windows for different uses, it cannot be used as part of the Key Delimiter.",V.Local.sContains(1),V.Local.sContains(0))
+	V.Local.sContains.RedimPreserve(0,0)
+	F.Intrinsic.UI.Msgbox(V.Local.sContains)
+	F.Intrinsic.Control.If(V.DataTable.dtLinkChk.RowCount,>,0)
+		Gui.F_Link_Chk.txtDelimiter.Text(V.DataTable.dtLinkChk(0).DELIMITER!FieldVal)
+	F.Intrinsic.Control.Else
+		Gui.F_Link_Chk.txtDelimiter.Text("")
+	F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+V.Local.sDelimiter.Set(V.Screen.F_Link_Chk!txtDelimiter.Text.Trim)
+F.Intrinsic.Control.If(V.Local.sDelimiter.Length,=,0)
+	'Delimiter length is zero, notify user and reset
+	F.Intrinsic.UI.Msgbox("Key Delimiter cannot be blank and cannot contain any unusable characters in Windows Filenames.")
+	F.Intrinsic.Control.If(V.DataTable.dtLinkChk.RowCount,>,0)
+		Gui.F_Link_Chk.txtDelimiter.Text(V.DataTable.dtLinkChk(0).DELIMITER!FieldVal)
+	F.Intrinsic.Control.Else
+		Gui.F_Link_Chk.txtDelimiter.Text("")
+	F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+F.Data.DataTable.SetValue("dtLinkChk",-1,"DELIMITER",V.Local.sDelimiter)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage,"ScriptFile",V.Caller.ScriptFile,"CurrentSubroutine",V.Ambient.CurrentSubroutine)
+	F.Intrinsic.Control.CallSub(F_Link_Chk_UnLoad)
+F.Intrinsic.Control.EndTry
+Program.Sub.txtDelimiter_LostFocus.End
+
+Program.Sub.cmdSave_Click.Start
+F.Intrinsic.Control.Try
+
+F.ODBC.Connection!con.OpenCompanyConnection
+F.Data.DataTable.SaveToDB("dtLinkChk","con","GCG_5951_LINK_CHK","LINK_TYPE",256)
+F.ODBC.Connection!con.Close
+F.Data.DataTable.AcceptChanges("dtLinkChk")
+F.Intrinsic.UI.Msgbox("Saved!")
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage,"ScriptFile",V.Caller.ScriptFile,"CurrentSubroutine",V.Ambient.CurrentSubroutine)
+	F.Intrinsic.Control.CallSub(F_Link_Chk_UnLoad)
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdSave_Click.End
+
+Program.Sub.lstTypes_Click.Start
+V.Local.sFilter.Declare
+F.Intrinsic.Control.Try
+
+F.Intrinsic.Control.If(V.Screen.F_Link_Chk!lstTypes.ListIndex,=,-1)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+Gui.F_Link_Chk.frameTables.Enabled(True)
+Gui.F_Link_Chk.frameFieldSettings.Enabled(False)
+Gui.F_Link_Chk.txtCharLength.Text("")
+F.Intrinsic.Control.BlockEvents
+Gui.F_Link_Chk.chkLPadZero.Value(0)
+F.Intrinsic.Control.UnBlockEvents
+Gui.F_Link_Chk.txtTable.Text(V.DataTable.dtLinkChk(V.Screen.F_Link_Chk!lstTypes.ListIndex).TABLE_NAME!FieldValTrim)
+F.Intrinsic.Control.If(V.Screen.F_Link_Chk!txtTable.Text,!=,"")
+	F.Intrinsic.String.Build("[TABLE_NAME] = '{0}'",V.Screen.F_Link_Chk!txtTable.Text,V.Local.sFilter)
+	F.Data.DataView.SetFilter("dtTables","dvString",V.Local.sFilter)
+	F.Intrinsic.String.Build("[TABLE_ID] = {0}",V.DataView.dtTables!dvString(0).TABLE_ID!FieldVal,V.Local.sFilter)
+	F.Data.DataView.SetFilter("dtTables","dvString","")
+	F.Data.DataView.SetFilter("dtFields","dvTable",V.Local.sFilter)
+	Gui.F_Link_Chk.txtField.Text("")
+	Gui.F_Link_Chk.lstFields.ClearItems
+	F.Intrinsic.Control.CallSub(AddFieldsToList)
+	Gui.F_Link_Chk.txtTypeEmail.Text(V.DataTable.dtLinkChk(V.Screen.F_Link_Chk!lstTypes.ListIndex).TYPE_EMAIL!FieldVal)
+	Gui.F_Link_Chk.frameFields.Enabled(True)
+F.Intrinsic.Control.Else
+	F.Data.DataView.SetFilter("dtFields","dvTable","")
+	Gui.F_Link_Chk.txtField.Text("")
+	Gui.F_Link_Chk.lstFields.ClearItems
+	Gui.F_Link_Chk.txtTypeEmail.Text("")
+	Gui.F_Link_Chk.frameFields.Enabled(False)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage,"ScriptFile",V.Caller.ScriptFile,"CurrentSubroutine",V.Ambient.CurrentSubroutine)
+	F.Intrinsic.Control.CallSub(F_Link_Chk_UnLoad)
+F.Intrinsic.Control.EndTry
+Program.Sub.lstTypes_Click.End
+
+Program.Sub.cmdTableBRW_Click.Start
+V.Local.sDataTableString.Declare
+V.Local.sColumnTitles.Declare
+V.Local.sColumnWidths.Declare
+V.Local.sRet.Declare
+V.Local.sFilter.Declare
+V.Local.iRet.Declare
+F.Intrinsic.Control.Try
+
+F.Data.DataView.ToString("dtTables","dvString","TABLE_ID*!*TABLE_NAME","*!*","#$#",V.Local.sDataTableString)
+V.Local.sColumnTitles.Set("Table ID*!*Table Name")
+V.Local.sColumnWidths.Set("35*!*50")
+F.Intrinsic.String.Split(V.Local.sColumnTitles,"*!*",V.Local.sColumnTitles)
+F.Intrinsic.String.Split(V.Local.sColumnWidths,"*!*",V.Local.sColumnWidths)
+F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+F.Intrinsic.UI.BrowserFromString("Table Names",V.Local.sDataTableString,"*!*","#$#",V.Local.sColumnTitles,V.Local.sColumnWidths,V.Local.sRet)
+F.Intrinsic.UI.SetBrowserHotTypeAhead(False)
+
+F.Intrinsic.Control.If(V.Local.sRet.IsNotCancel)
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	'0 - Table ID
+	'1 - Table Name
+	
+	F.Intrinsic.Control.If(V.DataTable.dtLinkChk(V.Screen.F_Link_Chk!lstTypes.ListIndex).FIELD_NAMES!FieldVal,!=,"")
+		F.Intrinsic.UI.Msgbox("There are already fields set up for this location. If you change tables, you will lose all your fields. Do you want to continue?","Reset Fields",4,V.Local.iRet)
+		F.Intrinsic.Control.If(V.Local.iRet,=,V.Ambient.MsgBoxNo)
+			F.Intrinsic.Control.ExitSub
+		F.Intrinsic.Control.EndIf
+		Gui.F_Link_Chk.lstFields.ClearItems
+	F.Intrinsic.Control.EndIf
+	Gui.F_Link_Chk.txtField.Text("")
+	F.Intrinsic.String.Build("[TABLE_ID] = {0}",V.Local.sRet(0),V.Local.sFilter)
+	F.Data.DataView.SetFilter("dtFields","dvTable",V.Local.sFilter)
+	Gui.F_Link_Chk.frameFieldSettings.Enabled(False)
+	Gui.F_Link_Chk.txtCharLength.Text("")
+	F.Intrinsic.Control.BlockEvents
+	Gui.F_Link_Chk.chkLPadZero.Value(0)
+	F.Intrinsic.Control.UnBlockEvents
+	Gui.F_Link_Chk.frameFields.Enabled(True)
+	Gui.F_Link_Chk.txtTable.Text(V.Local.sRet(1))
+	F.Data.DataTable.SetValue("dtLinkChk",V.Screen.F_Link_Chk!lstTypes.ListIndex,"FIELD_NAMES","","DATABASE_LOCS","","WIDTHS","","LPAD_ZERO","","TABLE_NAME",V.Local.sRet(1))
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage,"ScriptFile",V.Caller.ScriptFile,"CurrentSubroutine",V.Ambient.CurrentSubroutine)
+	F.Intrinsic.Control.CallSub(F_Link_Chk_UnLoad)
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdTableBRW_Click.End
+
+Program.Sub.cmdAddField_Click.Start
+V.Local.sFields.Declare
+V.Local.sLocations.Declare
+V.Local.sWidths.Declare
+V.Local.sLPadZeros.Declare
+V.Local.sCountArray.Declare
+V.Local.iCount.Declare
+V.Local.bContains.Declare
+F.Intrinsic.Control.Try
+
+F.Intrinsic.Control.If(V.DataTable.dtLinkChk(V.Screen.F_Link_Chk!lstTypes.ListIndex).FIELD_NAMES!FieldVal,!=,"")
+	F.Intrinsic.String.Split(V.DataTable.dtLinkChk(V.Screen.F_Link_Chk!lstTypes.ListIndex).FIELD_NAMES!FieldVal,"*!*",V.Local.sCountArray)
+	V.Local.bContains.Set(False)
+	F.Intrinsic.Control.For(V.Local.iCount,0,V.Local.sCountArray.UBound,1)
+		F.Intrinsic.Control.If(V.Local.sCountArray(V.Local.iCount),=,V.Screen.F_Link_Chk!txtField.Text)
+			V.Local.bContains.Set(True)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Next(V.Local.iCount)
+	F.Intrinsic.Control.If(V.Local.bContains)
+		'Field already exists, notify user and cancel
+		F.Intrinsic.String.Build("Field {0} is already on the list. Canceling append.",V.Screen.F_Link_Chk!txtField.Text,V.Local.sFields)
+		F.Intrinsic.UI.Msgbox(V.Local.sFields)
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Math.Add(V.Local.sCountArray.UBound,2,V.Local.iCount)
+	F.Intrinsic.String.Build("{0}*!*{1}",V.DataTable.dtLinkChk(V.Screen.F_Link_Chk!lstTypes.ListIndex).FIELD_NAMES!FieldVal,V.Screen.F_Link_Chk!txtField.Text,V.Local.sFields)
+	F.Intrinsic.String.Build("{0}. {1}.{2}",V.Local.iCount,V.Screen.F_Link_Chk!txtTable.Text,V.Screen.F_Link_Chk!txtField.Text,V.Local.sLocations)
+	Gui.F_Link_Chk.lstFields.AddItem(V.Local.sLocations)
+	F.Intrinsic.String.Build("{0}*!*{1}.{2}",V.DataTable.dtLinkChk(V.Screen.F_Link_Chk!lstTypes.ListIndex).DATABASE_LOCS!FieldVal,V.Screen.F_Link_Chk!txtTable.Text,V.Screen.F_Link_Chk!txtField.Text,V.Local.sLocations)
+	F.Intrinsic.String.Build("{0}*!*1",V.DataTable.dtLinkChk(V.Screen.F_Link_Chk!lstTypes.ListIndex).WIDTHS!FieldVal,V.Local.sWidths)
+	F.Intrinsic.String.Build("{0}*!*0",V.DataTable.dtLinkChk(V.Screen.F_Link_Chk!lstTypes.ListIndex).LPAD_ZERO!FieldVal,V.Local.sLPadZeros)
+	F.Data.DataTable.SetValue("dtLinkChk",V.Screen.F_Link_Chk!lstTypes.ListIndex,"FIELD_NAMES",V.Local.sFields,"DATABASE_LOCS",V.Local.sLocations,"WIDTHS",V.Local.sWidths,"LPAD_ZERO",V.Local.sLPadZeros)
+F.Intrinsic.Control.Else
+	F.Intrinsic.String.Build("1. {0}.{1}",V.Screen.F_Link_Chk!txtTable.Text,V.Screen.F_Link_Chk!txtField.Text,V.Local.sLocations)
+	Gui.F_Link_Chk.lstFields.AddItem(V.Local.sLocations)
+	F.Intrinsic.String.Build("{0}.{1}",V.Screen.F_Link_Chk!txtTable.Text,V.Screen.F_Link_Chk!txtField.Text,V.Local.sLocations)
+	F.Data.DataTable.SetValue("dtLinkChk",V.Screen.F_Link_Chk!lstTypes.ListIndex,"FIELD_NAMES",V.Screen.F_Link_Chk!txtField.Text,"DATABASE_LOCS",V.Local.sLocations,"WIDTHS","1","LPAD_ZERO","0")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage,"ScriptFile",V.Caller.ScriptFile,"CurrentSubroutine",V.Ambient.CurrentSubroutine)
+	F.Intrinsic.Control.CallSub(F_Link_Chk_UnLoad)
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdAddField_Click.End
+
+Program.Sub.cmdDeleteType_Click.Start
+V.Local.sMsg.Declare
+V.Local.sSQL.Declare
+V.Local.iRet.Declare
+F.Intrinsic.Control.Try
+
+F.Intrinsic.Control.If(V.Screen.F_Link_Chk!lstTypes.ListIndex,=,-1)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.String.Build("Confirm delete of Link {0} check?",V.DataTable.dtLinkChk(V.Screen.F_Link_Chk!lstTypes.ListIndex).DESCRIPTION!FieldVal,V.Local.sMsg)
+F.Intrinsic.UI.Msgbox(V.Local.sMsg,"Press 'No' to cancel Delete",4,V.Local.iRet)
+
+F.Intrinsic.Control.If(V.Local.iRet,=,V.Ambient.MsgBoxYes)
+	F.Intrinsic.String.Build("delete from GCG_5951_LINK_CHK where LINK_TYPE = {0};",V.DataTable.dtLinkChk(V.Screen.F_Link_Chk!lstTypes.ListIndex).LINK_TYPE!FieldVal,V.Local.sSQL)
+	F.ODBC.Connection!con.OpenCompanyConnection
+	F.ODBC.Connection!con.Execute(V.Local.sSQL)
+	F.ODBC.Connection!con.Close
+	F.Data.DataTable.DeleteRow("dtLinkChk",V.Screen.F_Link_Chk!lstTypes.ListIndex)
+	F.Intrinsic.Control.CallSub(cmdSave_Click)
+	Gui.F_Link_Chk.txtCharLength.Text("")
+	F.Intrinsic.Control.BlockEvents
+	Gui.F_Link_Chk.chkLPadZero.Value(0)
+	F.Intrinsic.Control.UnBlockEvents
+	Gui.F_Link_Chk.lstFields.ClearItems
+	Gui.F_Link_Chk.txtTypeEmail.Text("")
+	Gui.F_Link_Chk.txtField.Text("")
+	Gui.F_Link_Chk.txtTable.Text("")
+	Gui.F_Link_Chk.lstTypes.ClearItems
+	Gui.F_Link_Chk.lstTypes.AddItems("DataTable","dtLinkChk","DESCRIPTION","DESCRIPTION")
+	Gui.F_Link_Chk.frameFields.Enabled(False)
+	Gui.F_Link_Chk.frameTables.Enabled(False)
+	Gui.F_Link_Chk.frameFieldSettings.Enabled(False)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage,"ScriptFile",V.Caller.ScriptFile,"CurrentSubroutine",V.Ambient.CurrentSubroutine)
+	F.Intrinsic.Control.CallSub(F_Link_Chk_UnLoad)
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdDeleteType_Click.End
+
+Program.Sub.cmdDeleteField_Click.Start
+V.Local.sFields.Declare
+V.Local.sLocations.Declare
+V.Local.sWidths.Declare
+V.Local.sLPadZeros.Declare
+V.Local.sMsg.Declare
+V.Local.iRet.Declare
+F.Intrinsic.Control.Try
+
+F.Intrinsic.Control.If(V.Screen.F_Link_Chk!lstFields.ListIndex,=,-1)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.String.Split(V.DataTable.dtLinkChk(V.Screen.F_Link_Chk!lstTypes.ListIndex).DATABASE_LOCS!FieldVal,"*!*",V.Local.sLocations)
+F.Intrinsic.String.Split(V.DataTable.dtLinkChk(V.Screen.F_Link_Chk!lstTypes.ListIndex).FIELD_NAMES!FieldVal,"*!*",V.Local.sFields)
+F.Intrinsic.String.Split(V.DataTable.dtLinkChk(V.Screen.F_Link_Chk!lstTypes.ListIndex).WIDTHS!FieldVal,"*!*",V.Local.sWidths)
+F.Intrinsic.String.Split(V.DataTable.dtLinkChk(V.Screen.F_Link_Chk!lstTypes.ListIndex).LPAD_ZERO!FieldVal,"*!*",V.Local.sLPadZeros)
+
+F.Intrinsic.String.Build("Confirm delete of Field {0} check?",V.Local.sLocations(V.Screen.F_Link_Chk!lstFields.ListIndex),V.Local.sMsg)
+F.Intrinsic.UI.Msgbox(V.Local.sMsg,"Press 'No' to cancel Delete",4,V.Local.iRet)
+
+F.Intrinsic.Control.If(V.Local.iRet,=,V.Ambient.MsgBoxYes)
+	F.Intrinsic.Control.If(V.Local.sLocations.UBound,>,0)
+		F.Intrinsic.Variable.RemoveArrayElementByOrdinal(V.Local.sLocations,V.Screen.F_Link_Chk!lstFields.ListIndex,V.Local.sLocations)
+		F.Intrinsic.Variable.RemoveArrayElementByOrdinal(V.Local.sFields,V.Screen.F_Link_Chk!lstFields.ListIndex,V.Local.sFields)
+		F.Intrinsic.Variable.RemoveArrayElementByOrdinal(V.Local.sWidths,V.Screen.F_Link_Chk!lstFields.ListIndex,V.Local.sWidths)
+		F.Intrinsic.Variable.RemoveArrayElementByOrdinal(V.Local.sLPadZeros,V.Screen.F_Link_Chk!lstFields.ListIndex,V.Local.sLPadZeros)
+	F.Intrinsic.Control.Else
+		V.Local.sLocations.Set("")
+		V.Local.sFields.Set("")
+		V.Local.sWidths.Set("")
+		V.Local.sLPadZeros.Set("")
+	F.Intrinsic.Control.EndIf
+	F.Intrinsic.String.Join(V.Local.sLocations,"*!*",V.Local.sLocations)
+	F.Intrinsic.String.Join(V.Local.sFields,"*!*",V.Local.sFields)
+	F.Intrinsic.String.Join(V.Local.sWidths,"*!*",V.Local.sWidths)
+	F.Intrinsic.String.Join(V.Local.sLPadZeros,"*!*",V.Local.sLPadZeros)
+	F.Data.DataTable.SetValue("dtLinkChk",V.Screen.F_Link_Chk!lstTypes.ListIndex,"FIELD_NAMES",V.Local.sFields,"DATABASE_LOCS",V.Local.sLocations,"WIDTHS",V.Local.sWidths,"LPAD_ZERO",V.Local.sLPadZeros)
+	Gui.F_Link_Chk.lstFields.ClearItems
+	Gui.F_Link_Chk.frameFieldSettings.Enabled(False)
+	Gui.F_Link_Chk.txtCharLength.Text("")
+	F.Intrinsic.Control.BlockEvents
+	Gui.F_Link_Chk.chkLPadZero.Value(0)
+	F.Intrinsic.Control.UnBlockEvents
+	F.Intrinsic.Control.CallSub(AddFieldsToList)
+	F.Intrinsic.Control.CallSub(cmdSave_Click)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage,"ScriptFile",V.Caller.ScriptFile,"CurrentSubroutine",V.Ambient.CurrentSubroutine)
+	F.Intrinsic.Control.CallSub(F_Link_Chk_UnLoad)
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdDeleteField_Click.End
+
+Program.Sub.AddFieldsToList.Start
+V.Local.sFields.Declare
+V.Local.sListString.Declare
+V.Local.iCnt.Declare
+V.Local.iCount.Declare
+F.Intrinsic.Control.Try
+
+F.Intrinsic.Control.If(V.DataTable.dtLinkChk(V.Screen.F_Link_Chk!lstTypes.ListIndex).DATABASE_LOCS!FieldVal,=,"")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+F.Intrinsic.String.Split(V.DataTable.dtLinkChk(V.Screen.F_Link_Chk!lstTypes.ListIndex).DATABASE_LOCS!FieldVal,"*!*",V.Local.sFields)
+F.Intrinsic.Control.For(V.Local.iCnt,0,V.Local.sFields.UBound,1)
+	F.Intrinsic.Math.Add(V.Local.iCnt,1,V.Local.iCount)
+	F.Intrinsic.String.Build("{0}. {1}",V.Local.iCount,V.Local.sFields(V.Local.iCnt),V.Local.sListString)
+	Gui.F_Link_Chk.lstFields.AddItem(V.Local.sListString)
+F.Intrinsic.Control.Next(V.Local.iCnt)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage,"ScriptFile",V.Caller.ScriptFile,"CurrentSubroutine",V.Ambient.CurrentSubroutine)
+	F.Intrinsic.Control.CallSub(F_Link_Chk_UnLoad)
+F.Intrinsic.Control.EndTry
+Program.Sub.AddFieldsToList.End
+
+Program.Sub.cmdFieldBRW_Click.Start
+V.Local.sDataTableString.Declare
+V.Local.sColumnTitles.Declare
+V.Local.sColumnWidths.Declare
+V.Local.sRet.Declare
+V.Local.sFilter.Declare
+F.Intrinsic.Control.Try
+
+F.Data.DataView.ToString("dtFields","dvTable","FIELD_ID*!*FIELD_NAME","*!*","#$#",V.Local.sDataTableString)
+V.Local.sColumnTitles.Set("Field ID*!*Field Name")
+V.Local.sColumnWidths.Set("35*!*50")
+F.Intrinsic.String.Split(V.Local.sColumnTitles,"*!*",V.Local.sColumnTitles)
+F.Intrinsic.String.Split(V.Local.sColumnWidths,"*!*",V.Local.sColumnWidths)
+F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+F.Intrinsic.String.Build("Field Names for {0}",V.Screen.F_Link_Chk!txtTable.Text.Trim,V.Local.sFilter)
+F.Intrinsic.UI.BrowserFromString(V.Local.sFilter,V.Local.sDataTableString,"*!*","#$#",V.Local.sColumnTitles,V.Local.sColumnWidths,V.Local.sRet)
+F.Intrinsic.UI.SetBrowserHotTypeAhead(False)
+
+F.Intrinsic.Control.If(V.Local.sRet.IsNotCancel)
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	'0 - Field ID
+	'1 - Field Name
+	
+	Gui.F_Link_Chk.txtField.Text(V.Local.sRet(1))
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage,"ScriptFile",V.Caller.ScriptFile,"CurrentSubroutine",V.Ambient.CurrentSubroutine)
+	F.Intrinsic.Control.CallSub(F_Link_Chk_UnLoad)
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdFieldBRW_Click.End
+
+Program.Sub.lstFields_Click.Start
+V.Local.sWidths.Declare
+V.Local.sLPadZeros.Declare
+F.Intrinsic.Control.Try
+
+F.Intrinsic.Control.If(V.Screen.F_Link_Chk!lstFields.ListIndex,=,-1)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.String.Split(V.DataTable.dtLinkChk(V.Screen.F_Link_Chk!lstTypes.ListIndex).WIDTHS!FieldVal,"*!*",V.Local.sWidths)
+F.Intrinsic.String.Split(V.DataTable.dtLinkChk(V.Screen.F_Link_Chk!lstTypes.ListIndex).LPAD_ZERO!FieldVal,"*!*",V.Local.sLPadZeros)
+
+Gui.F_Link_Chk.txtCharLength.Text(V.Local.sWidths(V.Screen.F_Link_Chk!lstFields.ListIndex))
+F.Intrinsic.Control.BlockEvents
+Gui.F_Link_Chk.chkLPadZero.Value(V.Local.sLPadZeros(V.Screen.F_Link_Chk!lstFields.ListIndex).Long)
+F.Intrinsic.Control.UnBlockEvents
+Gui.F_Link_Chk.frameFieldSettings.Enabled(True)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage,"ScriptFile",V.Caller.ScriptFile,"CurrentSubroutine",V.Ambient.CurrentSubroutine)
+	F.Intrinsic.Control.CallSub(F_Link_Chk_UnLoad)
+F.Intrinsic.Control.EndTry
+Program.Sub.lstFields_Click.End
+
+Program.Sub.txtTable_LostFocus.Start
+V.Local.sTable.Declare
+V.Local.sFilter.Declare
+V.Local.iRet.Declare
+F.Intrinsic.Control.Try
+
+F.Intrinsic.Control.If(V.Screen.F_Link_Chk!txtTable.Text.Trim,=,"")
+	Gui.F_Link_Chk.txtTable.Text(V.DataTable.dtLinkChk(V.Screen.F_Link_Chk!lstTypes.ListIndex).TABLE_NAME!FieldVal)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+V.Local.sTable.Set(V.Screen.F_Link_Chk!txtTable.Text.Trim)
+Gui.F_Link_Chk.txtTable.Text(V.Local.sTable.UCase)
+
+F.Intrinsic.String.Build("[TABLE_NAME] = '{0}'",V.Local.sTable.UCase,V.Local.sFilter)
+F.Data.DataView.SetFilter("dtTables","dvString",V.Local.sFilter)
+F.Intrinsic.Control.If(V.DataView.dtTables!dvString.RowCount,=,0)
+	F.Intrinsic.UI.Msgbox("Table not found in table list.")
+	F.Data.DataView.SetFilter("dtTables","dvString","")
+	Gui.F_Link_Chk.txtTable.Text(V.DataTable.dtLinkChk(V.Screen.F_Link_Chk!lstTypes.ListIndex).TABLE_NAME!FieldVal)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.Local.sTable.UCase,!=,V.DataTable.dtLinkChk(V.Screen.F_Link_Chk!lstTypes.ListIndex).TABLE_NAME!FieldVal)
+	F.Intrinsic.Control.If(V.DataTable.dtLinkChk(V.Screen.F_Link_Chk!lstTypes.ListIndex).FIELD_NAMES!FieldVal,!=,"")
+		F.Intrinsic.UI.Msgbox("There are already fields set up for this location. If you change tables, you will lose all your fields. Do you want to continue?","Reset Fields",4,V.Local.iRet)
+		F.Intrinsic.Control.If(V.Local.iRet,=,V.Ambient.MsgBoxNo)
+			Gui.F_Link_Chk.txtTable.Text(V.DataTable.dtLinkChk(V.Screen.F_Link_Chk!lstTypes.ListIndex).TABLE_NAME!FieldVal)
+			F.Data.DataView.SetFilter("dtTables","dvString","")
+			F.Intrinsic.Control.ExitSub
+		F.Intrinsic.Control.EndIf
+		Gui.F_Link_Chk.lstFields.ClearItems
+	F.Intrinsic.Control.EndIf
+	Gui.F_Link_Chk.txtField.Text("")
+	F.Intrinsic.String.Build("[TABLE_ID] = {0}",V.DataView.dtTables!dvString(0).TABLE_ID!FieldVal,V.Local.sFilter)
+	F.Data.DataView.SetFilter("dtFields","dvTable",V.Local.sFilter)
+	Gui.F_Link_Chk.frameFieldSettings.Enabled(False)
+	Gui.F_Link_Chk.txtCharLength.Text("")
+	F.Intrinsic.Control.BlockEvents
+	Gui.F_Link_Chk.chkLPadZero.Value(0)
+	F.Intrinsic.Control.UnBlockEvents
+	Gui.F_Link_Chk.frameFields.Enabled(True)
+	F.Data.DataTable.SetValue("dtLinkChk",V.Screen.F_Link_Chk!lstTypes.ListIndex,"FIELD_NAMES","","DATABASE_LOCS","","WIDTHS","","LPAD_ZERO","","TABLE_NAME",V.Local.sTable.UCase)
+F.Intrinsic.Control.EndIf
+F.Data.DataView.SetFilter("dtTables","dvString","")
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage,"ScriptFile",V.Caller.ScriptFile,"CurrentSubroutine",V.Ambient.CurrentSubroutine)
+	F.Intrinsic.Control.CallSub(F_Link_Chk_UnLoad)
+F.Intrinsic.Control.EndTry
+Program.Sub.txtTable_LostFocus.End
+
+Program.Sub.txtField_LostFocus.Start
+V.Local.sField.Declare
+V.Local.sFilter.Declare
+F.Intrinsic.Control.Try
+
+F.Intrinsic.Control.If(V.Screen.F_Link_Chk!txtField.Text.Trim,=,"")
+	Gui.F_Link_Chk.txtField.Text("")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+V.Local.sField.Set(V.Screen.F_Link_Chk!txtField.Text.Trim)
+Gui.F_Link_Chk.txtField.Text(V.Local.sField.UCase)
+
+F.Intrinsic.String.Build("[TABLE_NAME] = '{0}'",V.DataTable.dtLinkChk(V.Screen.F_Link_Chk!lstTypes.ListIndex).TABLE_NAME!FieldVal,V.Local.sFilter)
+F.Data.DataView.SetFilter("dtTables","dvString",V.Local.sFilter)
+F.Intrinsic.String.Build("[TABLE_ID] = {0} and FIELD_NAME = '{1}'",V.DataView.dtTables!dvString(0).TABLE_ID!FieldVal,V.Local.sField.UCase,V.Local.sFilter)
+F.Data.DataView.SetFilter("dtFields","dvTable",V.Local.sFilter)
+F.Intrinsic.Control.If(V.DataView.dtFields!dvTable.RowCount,=,0)
+	F.Intrinsic.UI.Msgbox("Field not found on table.")
+	F.Intrinsic.String.Build("[TABLE_ID] = {0}",V.DataView.dtTables!dvString(0).TABLE_ID!FieldVal,V.Local.sFilter)
+	F.Data.DataView.SetFilter("dtFields","dvTable",V.Local.sFilter)
+	F.Data.DataView.SetFilter("dtTables","dvString","")
+	Gui.F_Link_Chk.txtField.Text("")
+F.Intrinsic.Control.EndIf
+
+F.Data.DataView.SetFilter("dtTables","dvString","")
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage,"ScriptFile",V.Caller.ScriptFile,"CurrentSubroutine",V.Ambient.CurrentSubroutine)
+	F.Intrinsic.Control.CallSub(F_Link_Chk_UnLoad)
+F.Intrinsic.Control.EndTry
+Program.Sub.txtField_LostFocus.End
+
+Program.Sub.txtCharLength_LostFocus.Start
+V.Local.sWidths.Declare
+F.Intrinsic.Control.Try
+
+F.Intrinsic.String.Split(V.DataTable.dtLinkChk(V.Screen.F_Link_Chk!lstTypes.ListIndex).WIDTHS!FieldVal,"*!*",V.Local.sWidths)
+
+F.Intrinsic.Control.If(V.Screen.F_Link_Chk!txtCharLength.Text.Long,=,0)
+	Gui.F_Link_Chk.txtCharLength.Text(V.Local.sWidths(V.Screen.F_Link_Chk!lstFields.ListIndex))
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.ElseIf(V.Screen.F_Link_Chk!txtCharLength.Text.Long,>,30)
+	Gui.F_Link_Chk.txtCharLength.Text(V.Local.sWidths(V.Screen.F_Link_Chk!lstFields.ListIndex))
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+V.Local.sWidths(V.Screen.F_Link_Chk!lstFields.ListIndex).Set(V.Screen.F_Link_Chk!txtCharLength.Text)
+F.Intrinsic.String.Join(V.Local.sWidths,"*!*",V.Local.sWidths)
+F.Data.DataTable.SetValue("dtLinkChk",V.Screen.F_Link_Chk!lstTypes.ListIndex,"WIDTHS",V.Local.sWidths)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage,"ScriptFile",V.Caller.ScriptFile,"CurrentSubroutine",V.Ambient.CurrentSubroutine)
+	F.Intrinsic.Control.CallSub(F_Link_Chk_UnLoad)
+F.Intrinsic.Control.EndTry
+Program.Sub.txtCharLength_LostFocus.End
+
+Program.Sub.chkLPadZero_Click.Start
+V.Local.sLPadZeros.Declare
+F.Intrinsic.Control.Try
+
+F.Intrinsic.String.Split(V.DataTable.dtLinkChk(V.Screen.F_Link_Chk!lstTypes.ListIndex).LPAD_ZERO!FieldVal,"*!*",V.Local.sLPadZeros)
+
+V.Local.sLPadZeros(V.Screen.F_Link_Chk!lstFields.ListIndex).Set(V.Screen.F_Link_Chk!chkLPadZero.Value.String)
+F.Intrinsic.String.Join(V.Local.sLPadZeros,"*!*",V.Local.sLPadZeros)
+F.Data.DataTable.SetValue("dtLinkChk",V.Screen.F_Link_Chk!lstTypes.ListIndex,"LPAD_ZERO",V.Local.sLPadZeros)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage,"ScriptFile",V.Caller.ScriptFile,"CurrentSubroutine",V.Ambient.CurrentSubroutine)
+	F.Intrinsic.Control.CallSub(F_Link_Chk_UnLoad)
+F.Intrinsic.Control.EndTry
+Program.Sub.chkLPadZero_Click.End
+
+Program.Sub.cmdDoc_Click.Start
+V.Local.sFilePath.Declare
+V.Local.sLocalFilePath.Declare
+V.Local.bExists.Declare
+F.Intrinsic.Control.Try
+
+Gui.F_Link_Chk..Enabled(False)
+F.Intrinsic.Control.BlockEvents
+
+F.Intrinsic.String.Build("{0}\GCG_5951_Linking_Verification_Instructions.pdf",V.Caller.GASDir,V.Local.sFilePath)
+F.Intrinsic.String.Build("{0}\GCG_5951_Linking_Verification_Instructions.pdf",V.Caller.LocalGSSTempDir,V.Local.sLocalFilePath)
+
+F.Intrinsic.File.Exists(V.Local.sFilePath,V.Local.bExists)
+F.Intrinsic.Control.If(V.Local.bExists.Not)
+	'File is not on the Global server, notify the user
+	F.Intrinsic.String.Build("{0} is missing from Global Server. Locate a copy and place it in Global\Plugins\GAB\GAS\ folder or update project on the ARC.","GCG_5951_Linking_Verification_Instructions.pdf",V.Local.sFilePath)
+	F.Intrinsic.UI.Msgbox(V.Local.sFilePath)
+	F.Intrinsic.Control.UnBlockEvents
+	Gui.F_Link_Chk..Enabled(True)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.File.Exists(V.Local.sLocalFilePath,V.Local.bExists)
+F.Intrinsic.Control.If(V.Local.bExists)
+	'Local file exists, delete it
+	F.Intrinsic.File.DeleteFile(V.Local.sLocalFilePath)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.File.CopyOpenFile(V.Local.sFilePath,V.Local.sLocalFilePath)
+F.Intrinsic.Task.ShellExecSync(V.Caller.Handle,"Open",V.Local.sLocalFilePath,"","",1)
+
+F.Intrinsic.Control.UnBlockEvents
+Gui.F_Link_Chk..Enabled(True)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage,"ScriptFile",V.Caller.ScriptFile,"CurrentSubroutine",V.Ambient.CurrentSubroutine)
+	F.Intrinsic.Control.CallSub(F_Link_Chk_UnLoad)
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdDoc_Click.End
+
+Program.Sub.txtEmail_LostFocus.Start
+V.Local.sEmails.Declare
+V.Local.iEmail.Declare
+F.Intrinsic.Control.Try
+
+F.Intrinsic.Control.If(V.Screen.F_Link_Chk!txtEmail.Text.Trim,=,"")
+	F.Data.DataTable.SetValue("dtLinkChk",-1,"EMAIL","")
+	Gui.F_Link_Chk.txtEmail.Text("")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.String.Split(V.Screen.F_Link_Chk!txtEmail.Text.Trim,";",V.Local.sEmails)
+
+F.Intrinsic.Control.For(V.Local.iEmail,0,V.Local.sEmails.UBound,1)
+	F.Intrinsic.Control.If(V.Local.sEmails(V.Local.iEmail).Trim,=,"")
+		F.Intrinsic.Variable.RemoveArrayElementByOrdinal(V.Local.sEmails,V.Local.iEmail,V.Local.sEmails)
+		F.Intrinsic.Math.Sub(V.Local.iEmail,1,V.Local.iEmail)
+		F.Intrinsic.Control.If(V.Local.sEmails.UBound,=,0)
+			F.Intrinsic.Control.ExitFor(V.Local.iEmail)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Else
+		V.Local.sEmails(V.Local.iEmail).Set(V.Local.sEmails(V.Local.iEmail).Trim)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Next(V.Local.iEmail)
+
+F.Intrinsic.String.Join(V.Local.sEmails,";",V.Local.sEmails)
+
+Gui.F_Link_Chk.txtEmail.Text(V.Local.sEmails)
+F.Data.DataTable.SetValue("dtLinkChk",-1,"EMAIL",V.Local.sEmails)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage,"ScriptFile",V.Caller.ScriptFile,"CurrentSubroutine",V.Ambient.CurrentSubroutine)
+	F.Intrinsic.Control.CallSub(F_Link_Chk_UnLoad)
+F.Intrinsic.Control.EndTry
+Program.Sub.txtEmail_LostFocus.End
+
+Program.Sub.txtTypeEmail_LostFocus.Start
+V.Local.sEmails.Declare
+V.Local.iEmail.Declare
+F.Intrinsic.Control.Try
+
+F.Intrinsic.Control.If(V.Screen.F_Link_Chk!txtTypeEmail.Text.Trim,=,"")
+	F.Data.DataTable.SetValue("dtLinkChk",V.Screen.F_Link_Chk!lstTypes.ListIndex,"TYPE_EMAIL","")
+	Gui.F_Link_Chk.txtTypeEmail.Text("")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.String.Split(V.Screen.F_Link_Chk!txtTypeEmail.Text.Trim,";",V.Local.sEmails)
+
+F.Intrinsic.Control.For(V.Local.iEmail,0,V.Local.sEmails.UBound,1)
+	F.Intrinsic.Control.If(V.Local.sEmails(V.Local.iEmail).Trim,=,"")
+		F.Intrinsic.Variable.RemoveArrayElementByOrdinal(V.Local.sEmails,V.Local.iEmail,V.Local.sEmails)
+		F.Intrinsic.Math.Sub(V.Local.iEmail,1,V.Local.iEmail)
+		F.Intrinsic.Control.If(V.Local.sEmails.UBound,=,0)
+			F.Intrinsic.Control.ExitFor(V.Local.iEmail)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Else
+		V.Local.sEmails(V.Local.iEmail).Set(V.Local.sEmails(V.Local.iEmail).Trim)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Next(V.Local.iEmail)
+
+F.Intrinsic.String.Join(V.Local.sEmails,";",V.Local.sEmails)
+
+Gui.F_Link_Chk.txtTypeEmail.Text(V.Local.sEmails)
+F.Data.DataTable.SetValue("dtLinkChk",V.Screen.F_Link_Chk!lstTypes.ListIndex,"TYPE_EMAIL",V.Screen.F_Link_Chk!txtTypeEmail.Text)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage,"ScriptFile",V.Caller.ScriptFile,"CurrentSubroutine",V.Ambient.CurrentSubroutine)
+	F.Intrinsic.Control.CallSub(F_Link_Chk_UnLoad)
+F.Intrinsic.Control.EndTry
+Program.Sub.txtTypeEmail_LostFocus.End
